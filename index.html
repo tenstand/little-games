@@ -4,10 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
     <title>Document</title>
 </head>
 <body>
+    <header>
+        <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
+        <h3>The Rules</h3>
+        <p>Scissors cuts paper. Paper covers rock. Rock crushes lizard. Lizard poisons Spock. Spock smashes scissors. Scissors decapitates lizard. Lizard eats paper. Paper disproves Spock. Spock vaporizes rock. Rock crushes scissors.</p>
+    </header>
+
+    <section class = "game-area">
+        <div>
+            <p>Make your choice</p>
+            <button aria-label="rock" data-choice = "0" class="control"> Rock </button>
+            <button aria-label="paper" data-choice = "1" class="control"> Paper </button>
+            <button aria-label="scissors" data-choice = "2" class="control"> Scissors </button>
+            <button aria-label="lizard" data-choice = "3" class="control"> Lizard </button>
+            <button aria-label="spock" data-choice = "4" class="control"> Spock </button>
+        </div>
+
+    </section>
     
     <script src="assets/js/script.js"></script>
 </body>
