@@ -9,7 +9,7 @@ for (let buttons of buttons) {
     button.addEventListener("click", function(){
         let playerChoice = this.getAttribute("data.choice");
         playGame(playerChoice); 
-    }
+    });
 }
 
 function playGame(playerChoice){
@@ -60,9 +60,9 @@ function playGame(playerChoice){
        result("Computer wins! Try again!"); 
     } else if (computerChoice === "Rock"){ 
         result("You win!"); 
-    }else if (playerChoice === "Scissors"){
+    }else if (playerChoice === "Scissors")
         if (computerChoice === "Paper") 
         result =("You win!"); 
-    ] else if (computerChoice ==="Rock"){ 
+     else if (computerChoice ==="Rock")
         result("Computer wins! Try again!"); 
-    
+}
