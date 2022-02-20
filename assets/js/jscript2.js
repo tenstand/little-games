@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
         button.addEventListener('click', userPlay);
     }
 
-
     function userPlay(event){
         const clickedButton = event.target;
         const userChoice = clickedButton.getAttribute('data-choice');
@@ -19,7 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
         roundWinner(userChoice, computerChoice);
          
     }
-
 
     function computerPlay(){
         const computerChoice = Math.floor(Math.random() * 5);
@@ -40,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('player-score').innerText = userScore;
     }
 
-
     function roundWinner(userChoice, computerChoice){
         if (userChoice === computerChoice){
             alert(' its a tie');
@@ -55,9 +52,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 else{
                     userWins();
                 }
-                
             }
-
+        else{  
+            // User Paper
+            if (userChoice === 'paper'){
+                const beatsPaper = ['scissors', 'lizard']
+                if (beatsPaper.includes(computerChoice)){
+                    computerWins();
+                }
+                else{
+                    userWins();
+                }    
+        else{  
+             // User Scissors
+            if (userChoice === 'scissors'){
+            const beatsScissors = ['spock', 'rock']
+            if (beatsPaper.includes(computerChoice)){
+                computerWins();
+                }
+                else{
+                    userWins();
+                }    
+        else{  
+            // User Lizard
+            if (userChoice === 'lizard'){
+            const beatsLizard = ['scissors', 'rock']
+            if (beatsPaper.includes(computerChoice)){
+                computerWins();
+                }
+                else{
+                    userWins();
+                }            
+        else{  
+            // User Spock
+            if (userChoice === 'spock'){
+            const beatsLizard = ['lizard', 'paper']
+            if (beatsPaper.includes(computerChoice)){
+                computerWins();
+                }
+                else{
+                    userWins();
+                }            
         }
         
     }
