@@ -90,7 +90,12 @@ document.addEventListener('DOMContentLoaded', function () {
                     userWins();
                 }
             }
-        }
+            //play again
+            function playAgain(){
+            document.getElementById("play-again").innerText = "Play again? (y/n)"
+             if (!playAgain.equals("y"))
+            }
+        }    
 
     }
 
