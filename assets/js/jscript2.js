@@ -29,18 +29,21 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function computerWins() {
         computerScore = computerScore + 1;
-        alert('Computer wins Score ' + computerScore);
+        //alert('Computer wins Score ' + computerScore);
+        document.getElementById("player-result").innerText = "Computer wins!"
     }
 
     function userWins() {
         userScore = userScore + 1;
-        alert('User wins Score ' + userScore);
+        //alert('User wins Score ' + userScore);
+        document.getElementById("player-result").innerText = "You win!"
         document.getElementById('player-score').innerText = userScore;
     }
 
     function roundWinner(userChoice, computerChoice) {
         if (userChoice === computerChoice) {
-            alert(' its a tie');
+            //alert('its a tie');
+            document.getElementById("player-result").innerText = "It's a tie!"
         } else {
             // User Rock
             if (userChoice === 'rock') {
