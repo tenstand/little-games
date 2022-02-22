@@ -23,7 +23,14 @@ h1{
 
 h2 {
     font-family: sans-serif;
-    color: slategray;
+    color: #2c16b2;
+    text-transform: none;
+    }
+
+h3 {
+    font-family: "Righteous", sans-serif;
+    color: #f85824;
+    font-size: 20px;
     text-transform: none;
     }
 }
@@ -36,7 +43,6 @@ footer {
     min-height: 80px;
     padding-top: 5px;
     text-align: center;
-    background-color: #2c16b2;
 }
 
 /* game area */
@@ -50,50 +56,37 @@ footer {
 }
 
 #main-image {
-    width 100%
+    width: 100%;
+    height: auto;
     text-align: center;
 }
 
-
-
-.action_button{
-    background-color: #2c16b2;
-    color: white;
+.action_button1{
+    background-color: #1680b2;
+    color: black;
     padding: 10px;
 }
-/*media queries */
 
-/* For large to medium screens sizes from 1200px wide and down */
-@media screen and (max-width: 1200px) {
-
-#game-area{
-    width: 65%;
-    height: 1200px;
-    margin: 0 auto;
+.action_button2{
+    background-color: #f85824;
+    color: black;
+    padding: 10px;
 }
 
-#main-image {
-    width: 65%;
-    height: 1200px;
-    margin: 0 auto;
+.action_button3{
+    background-color: #f2e642;
+    color: black;
+    padding: 10px;
 }
 
-/* For medium screens */
-@media screen and (max-width: 950px){
-    #game-area{
-    width: 90%;
-    margin: 0 auto;
-    }
-    
-    #main-image {
-    width:90%;
-    margin: auto;
-    }
+.action_button4{
+    background-color: #e57df8;
+    color: black;
+    padding: 10px;
+}
 
-/* For mobile phones: */
-@media only screen and (min-width: 320px) and (max-width: 480px){ 
-    #main-pic {
-    width: 100%;
-    }
-  
-    
+.action_button5{
+    background-color: #a2f87d;
+    color: black;
+    padding: 10px;
+}
