@@ -31,13 +31,14 @@ document.addEventListener('DOMContentLoaded', function () {
         computerScore = computerScore + 1;
         //alert('Computer wins Score ' + computerScore);
         document.getElementById("player-result").innerText = "Computer wins!"
+        document.getElementById("computer-score").innerText = computerScore;
     }
 
     function userWins() {
         userScore = userScore + 1;
         //alert('User wins Score ' + userScore);
         document.getElementById("player-result").innerText = "You win!"
-        document.getElementById('player-score').innerText = userScore;
+        document.getElementById("player-score").innerText = userScore;
     }
 
     function roundWinner(userChoice, computerChoice) {
@@ -66,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // User Scissors
             else if (userChoice === 'scissors') {
                 const beatsScissors = ['spock', 'rock']
-                if (beatsPaper.includes(computerChoice)) {
+                if (beatsScissors.includes(computerChoice)) {
                     computerWins();
                 } else {
                     userWins();
@@ -75,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             // User Lizard
             else if (userChoice === 'lizard') {
                 const beatsLizard = ['scissors', 'rock']
-                if (beatsPaper.includes(computerChoice)) {
+                if (beatsLizard.includes(computerChoice)) {
                     computerWins();
                 } else {
                     userWins();
@@ -84,19 +85,14 @@ document.addEventListener('DOMContentLoaded', function () {
             // User Spock
             else if (userChoice === 'spock') {
                 const beatsSpock = ['lizard', 'paper']
-                if (beatsPaper.includes(computerChoice)) {
+                if (beatsSpock.includes(computerChoice)) {
                     computerWins();
                 } else {
                     userWins();
                 }
             }
-            //play again
-            function playAgain(){
-            document.getElementById("play-again").innerText = "Play again? (y/n)"
-             if (!playAgain.equals("y"))
-            }
+           
         }    
 
     }
-
 });
