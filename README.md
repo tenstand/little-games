@@ -40,7 +40,7 @@ The winner is shown by an announcement of "You Win!", Computer wins!" or "It's a
 
 ![game results](./assets/images/game-results.jpg)
 
-**game options**
+**Game options**
 
 A choice of buttons have been placed in the footer area. They are interactive, which enables the user to click to make their choice. They are brightly coloured, to help make the game look fun and playful.
 
