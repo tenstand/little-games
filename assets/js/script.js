@@ -1,68 +1,98 @@
+document.addEventListener('DOMContentLoaded', function () {
+    var computerScore = 0;
+    var userScore = 0;
 
-const buttons = document.getElementsByClassName("control");
-const playerScore = document.getElementById("player-score");
-const computerScore = document.getElementById("computer-score");
-const messages = document.getElementById("messages");
-const choices = ["rock", "paper", "scissors", "lizard", "spock"];
 
-for (let buttons of buttons) {
-    button.addEventListener("click", function(){
-        let playerChoice = this.getAttribute("data.choice");
-        playGame(playerChoice); 
-    });
-}
-
-function playGame(playerChoice){
-    playerImage.src = 'assets/images${choices[playerChoice]}.jpg';
-    playerImage.alt = choices[playerChoice];
-
-    let computerChoice = Math.floor(Math.random() * 5);
-
-    if (computerChoice === 1) {
-        computerChoice = 'rock';
+    const playerButtons = document.getElementsByTagName('button');
+    for (let button of playerButtons) {
+        button.addEventListener('click', userPlay);
     }
 
-    if (computerChoice === 2) {
-        computerChoice = 'paper';
+    function userPlay(event) {
+        const clickedButton = event.target;
+        const userChoice = clickedButton.getAttribute('data-choice');
+        const userImage = document.getElementById('userPlay');
+        userImage.setAttribute('src', './assets/images/' + userChoice + '.jpg');
+        const computerChoice = computerPlay();
+        console.log('Computer played ' + computerChoice + ' user played ' + userChoice);
+        roundWinner(userChoice, computerChoice);
+
     }
 
-    if(computerChoice === 3) {
-        computerChoice = 'scissors';
+    function computerPlay() {
+        const computerChoice = Math.floor(Math.random() * 5);
+        const plays = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+        const computerImage = document.getElementById('computerPlay');
+        computerImage.setAttribute('src', './assets/images/' + plays[computerChoice] + '.jpg');
+        return plays[computerChoice];
     }
 
-    if(computerChoice === 4) {
-        computerChoice = 'lizard';
+    function computerWins() {
+        computerScore = computerScore + 1;
+        //alert('Computer wins Score ' + computerScore);
+        document.getElementById("player-result").innerText = "Computer wins!"
+        document.getElementById("computer-score").innerText = computerScore;
     }
 
-    if(computerChoice === 5) {
-        computerChoice = 'spock';
+    function userWins() {
+        userScore = userScore + 1;
+        //alert('User wins Score ' + userScore);
+        document.getElementById("player-result").innerText = "You win!"
+        document.getElementById("player-score").innerText = userScore;
     }
 
-    computerImage.src = 'assets/images${choices[computerChoice]}.jpg';
-    computerImage.alt = choices[computerChoice];
+    function roundWinner(userChoice, computerChoice) {
+        if (userChoice === computerChoice) {
+            //alert('its a tie');
+            document.getElementById("player-result").innerText = "It's a tie!"
+        } else {
+            // User Rock
+            if (userChoice === 'rock') {
+                const beatsRock = ['paper', 'spock']
+                if (beatsRock.includes(computerChoice)) {
+                    computerWins();
+                } else {
+                    userWins();
+                }
+            }
+            // User Paper
+            else if (userChoice === 'paper') {
+                const beatsPaper = ['scissors', 'lizard']
+                if (beatsPaper.includes(computerChoice)) {
+                    computerWins();
+                } else {
+                    userWins();
+                }
+            }
+            // User Scissors
+            else if (userChoice === 'scissors') {
+                const beatsScissors = ['spock', 'rock']
+                if (beatsScissors.includes(computerChoice)) {
+                    computerWins();
+                } else {
+                    userWins();
+                }
+            }
+            // User Lizard
+            else if (userChoice === 'lizard') {
+                const beatsLizard = ['scissors', 'rock']
+                if (beatsLizard.includes(computerChoice)) {
+                    computerWins();
+                } else {
+                    userWins();
+                }
+            }
+            // User Spock
+            else if (userChoice === 'spock') {
+                const beatsSpock = ['lizard', 'paper']
+                if (beatsSpock.includes(computerChoice)) {
+                    computerWins();
+                } else {
+                    userWins();
+                }
+            }
+           
+        }    
 
-    let result = checkWinner(choices[computerChoice], [playerChoice]);
-
-    updateScores(result);
-}
-
-// See who's won
-
- if (playerChoice === computerChoice)
-       result = ("It's a tie!"); 
-    else if (playerChoice === "Rock"){
-      if (computerChoice ==="Scissors"){
-        result("You win!!");
-    } else if (computerChoice === "Paper"){ 
-        result("Computer wins! Try again!"); 
-    } else if (playerChoice ==="Paper"){ 
-       if (computerChoice ==="Scissors")
-       result("Computer wins! Try again!"); 
-    } else if (computerChoice === "Rock"){ 
-        result("You win!"); 
-    }else if (playerChoice === "Scissors")
-        if (computerChoice === "Paper") 
-        result =("You win!"); 
-     else if (computerChoice ==="Rock")
-        result("Computer wins! Try again!"); 
-}
+    }
+});
