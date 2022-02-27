@@ -94,11 +94,13 @@ ___
 
 **Content**
 
-The inspiration for the layout of the game came from the example Ultimate Rock, Paper, Scissors as well as the site [serialized.net](https://serialized.net/app/rpsls/#BITBH).
+Inspiration for the button layout came from the site [serialized.net](https://serialized.net/app/rpsls/#BITBH).
 
 The rules were taken from [rpsls.net](https://rpsls.net/#55xt9).
 
 **Code**
+
+Some html and css code were taken from the CI Ultimate Rock, Paper, Scissors example project. 
 
 I looked at a number of sites in order to understand JavaScript further. I used the following sites.
 
